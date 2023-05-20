@@ -3,7 +3,7 @@ import {visionTool} from '@sanity/vision'
 import {deskTool} from 'sanity/desk'
 import schemaTypes from './schemas'
 import {getStartedPlugin} from './plugins/sanity-plugin-tutorial'
-import { media } from 'sanity-plugin-media'
+import { media, mediaAssetSource } from 'sanity-plugin-media'
 import * as singletons from './schemas/singletons'
 import { PostsPreview } from './lib/components/PostsPreview';
 
@@ -90,6 +90,15 @@ export default defineConfig({
       singletonTypes.has(context.schemaType as any)
         ? input.filter(({ action }) => action && singletonActions.has(action))
         : input,
+  },
+
+  form: {
+    // Don't use this plugin when selecting files only (but allow all other enabled asset sources)
+    file: {
+      assetSources: previousAssetSources => {
+        return previousAssetSources.filter(assetSource => assetSource !== mediaAssetSource)
+      }
+    }
   }
 })
 

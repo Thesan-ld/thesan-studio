@@ -1,4 +1,5 @@
 import { defineField, defineType } from "sanity"
+import { mediaAssetSource } from "sanity-plugin-media"
 
 export const project = defineType({
     title: 'Project',
@@ -37,7 +38,14 @@ export const project = defineType({
             title: 'Images',
             name: 'images',
             type: 'array',
-            of: [{ type: 'image' }],
+            of: [
+                {
+                    type: 'image',
+                    options: {
+                        sources: [mediaAssetSource],
+                    }
+                },
+            ],
         }),
         defineField({
             title: 'Categories',
