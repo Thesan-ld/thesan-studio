@@ -1,9 +1,11 @@
+import { BsPeopleFill } from 'react-icons/bs';
 import { defineField, defineType } from "sanity";
 
 export const collaborator = defineType({
     title: 'Collaborator',
     name: 'collaborator',
     type: 'document',
+    icon: BsPeopleFill,
     fields: [
         defineField({
             title: 'Name',

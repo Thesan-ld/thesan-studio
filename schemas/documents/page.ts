@@ -1,9 +1,11 @@
+import { RiPagesLine } from "react-icons/ri";
 import { defineType, defineField } from "sanity";
 
 export const page = defineType({
     title: 'Page',
     name: 'page',
     type: 'document',
+    icon: RiPagesLine,
     fields: [
         defineField({
             title: 'Internal Label',

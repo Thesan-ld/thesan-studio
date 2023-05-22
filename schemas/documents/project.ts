@@ -1,3 +1,4 @@
+import { TbTheater } from 'react-icons/tb'
 import { defineField, defineType } from "sanity"
 import { mediaAssetSource } from "sanity-plugin-media"
 
@@ -5,6 +6,7 @@ export const project = defineType({
     title: 'Project',
     name: 'project',
     type: 'document',
+    icon: TbTheater,
     fields: [
         defineField({
             title: 'Title',
@@ -87,6 +89,14 @@ export const project = defineType({
             name: 'date',
             type: 'date',
             validation: Rule => Rule.required(),
+        }),
+        defineField({
+            title: 'Sort Offset',
+            name: 'sortOffset',
+            description: 'Used to offset the sort order of this project on the landing page.',
+            type: 'number',
+            validation: Rule => Rule.required(),
+            initialValue: 0,
         }),
     ],
 })

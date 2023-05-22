@@ -57,6 +57,7 @@ export default defineConfig({
               S.listItem()
                 .title(type.title || type.name)
                 .id(type.name)
+                .icon(type.icon) // use the icon defined in the schema
                 .child(
                   // Instead of rendering a list of documents, we render a single
                   // document, specifying the `documentId` manually to ensure

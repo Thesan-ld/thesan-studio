@@ -1,9 +1,11 @@
+import { MdHome } from "react-icons/md";
 import { defineType, defineField } from "sanity";
 
 export const homePage = defineType({
     title: 'Home Page',
     name: 'homePage',
     type: 'document',
+    icon: MdHome,
     fields: [
         defineField({
             title: 'Internal Label',
