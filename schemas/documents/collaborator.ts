@@ -23,11 +23,9 @@ export const collaborator = defineType({
             validation: Rule => Rule.required(),
         }),
         defineField({
-            title: 'Description',
-            name: 'description',
-            type: 'array',
-            of: [{ type: 'block' }],
-            validation: Rule => Rule.required(),
+            title: 'Website',
+            name: 'website',
+            type: 'url',
         }),
         defineField({
             title: 'Image',
@@ -36,6 +34,12 @@ export const collaborator = defineType({
             options: {
                 hotspot: true,
             },
+        }),
+        defineField({
+            title: 'Description',
+            name: 'description',
+            type: 'array',
+            of: [{ type: 'block' }],
         }),
     ],
 })
