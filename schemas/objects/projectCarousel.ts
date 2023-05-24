@@ -1,4 +1,5 @@
 import { defineType, defineField } from 'sanity';
+import { mediaAssetSource } from 'sanity-plugin-media';
 
 export const projectCarousel = defineType({
     title: 'Project Carousel',
@@ -19,6 +20,13 @@ export const projectCarousel = defineType({
             of: [{
                 type: 'reference',
                 to: [{ type: 'project' }]
+            },
+            {
+                type: 'image',
+                title: 'Image',
+                options: {
+                    sources: [mediaAssetSource],
+                }
             }],
             validation: Rule => Rule.required(),
         }),
