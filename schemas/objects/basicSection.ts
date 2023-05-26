@@ -27,6 +27,7 @@ export const basicSection = defineType({
                     },
                 },
                 { type: 'contactForm' },
+                { type: 'cta' },
             ],
             validation: Rule => Rule.required(),
         }),
