@@ -13,6 +13,12 @@ export const logoGrid = defineType({
             initialValue: 'Logo Grid',
         }),
         defineField({
+            title: 'Section Text Content',
+            name: 'sectionTextContent',
+            type: 'array',
+            of: [{ type: 'block' }],
+        }),
+        defineField({
             title: 'Columns',
             name: 'columns',
             type: 'number',
