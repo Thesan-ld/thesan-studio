@@ -9,5 +9,6 @@ export const pageContent = defineType({
         { type: 'contactForm' },
         { type: 'projectCarousel' },
         { type: 'categoryGrid' },
+        { type: 'logoGrid' },
     ],
 })
